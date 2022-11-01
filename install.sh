@@ -11,4 +11,4 @@ pip3 install rich bs4 requests
 echo "Packege success install now run tools!!!"
 clear
 sleep 3
-python3 maxphisher.py
+python3 iptr.py
